@@ -1,6 +1,7 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import { UserIP } from './UserIP.js';
+// import {WikipediaQuery} from '@lrnwebcomponents/wikipedia-query/wikipedia-query.js';
 
 export class LocationFromIP extends LitElement {
   static get tag() {
