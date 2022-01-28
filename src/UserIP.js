@@ -29,6 +29,8 @@ export class UserIP extends LitElement {
   static get properties() {
     return {
       ip: { type: String, reflect: true },
+      // city: { type: String, reflect: true },
+      // state: { type: String, reflect: true },
       location: { type: String, reflect: true },
     };
   }
@@ -103,6 +105,7 @@ export class UserIP extends LitElement {
       .then(data => {
         this.ip = data.ip;
         // This took me forever to mess around with but i think I understand
+
         this.location = `${data.city} ${data.country}`;
         return data;
       });

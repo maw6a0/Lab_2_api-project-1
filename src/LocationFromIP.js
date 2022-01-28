@@ -19,6 +19,8 @@ export class LocationFromIP extends LitElement {
     return {
       long: { type: Number, reflect: true },
       lat: { type: Number, reflect: true },
+      city: { type: String, reflect: true },
+      region_name: { type: String, reflect: true },
     };
   }
 
@@ -43,6 +45,8 @@ export class LocationFromIP extends LitElement {
         console.log(data);
         this.lat = data.latitude;
         this.long = data.longitude;
+        this.city = data.city;
+        this.state = data.region_name;
         return data;
       });
   }
@@ -70,6 +74,7 @@ export class LocationFromIP extends LitElement {
         <a href="https://www.google.com/maps/@${this.lat},${this.long},14z">
           Open in Google Maps
         </a>
+        console.log(${this.city} ${this.state})
       </ul>`;
   }
 }
