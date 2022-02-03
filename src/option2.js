@@ -32,7 +32,7 @@ class CourseDates extends LitElement {
       }
     };
   }
-
+/*
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'loadData' && this[propName]) {
@@ -74,6 +74,7 @@ class CourseDates extends LitElement {
         // this line prevents the linter from being mad since this is kinda a crappy old way of doing this :)
         // details: https://masteringjs.io/tutorials/eslint/ignore#:~:text=You%20can%20use%20comments%20to%20disable%20all%20ESLint,root%20directory..eslintignore%20syntax%20is%20similar%20to%20that%20of.gitignore.
         /* eslint-disable */
+        /*
         for (let i = 0; i < data.length; i++) {
           // the API we're drawing in is confusing, let's simplify for internal usage to our element
           const eventInfo = {
@@ -107,6 +108,8 @@ class CourseDates extends LitElement {
         }, 1000);
       });
   }
+  */
+ /*
 
   resetData() {
     this.dates = [];
@@ -164,3 +167,4 @@ class CourseDates extends LitElement {
 }
 
 customElements.define('course-dates', CourseDates);
+*/
