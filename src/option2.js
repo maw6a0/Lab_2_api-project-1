@@ -1,25 +1,35 @@
+// Option 2: A "page number" input that accepts a number and changes
+// a property called page on your element to request a specific page of results
 import { LitElement, css, html } from 'lit';
-import '@lrnwebcomponents/date-card/date-card.js';
+import '@lrnwebcomponents/date-card';
+import '@lrnwebcomponents/accent-card';
 
 class CourseDates extends LitElement {
   constructor() {
     super();
-    this.dates = [];
-    this.loadData = false;
-    this.view = 'card';
+    // this.dates = [];
+    // this.loadData = false;
+    // this.view = 'card';
+    this.page = null;
+    this.title = 'someName';
+    this.description = 'someDesc';
+    this.secondary_creator = 'someCreator'; 
   }
 
   static get properties() {
     return {
-      view: { type: String, reflect: true },
-      dates: {
-        type: Array,
+      title: { type: String, reflect: true },
+      description: {
+        type: String, reflect: true
       },
-      loadData: {
-        type: Boolean,
+      secondary_creator: {
+        type: String,
         reflect: true,
-        attribute: 'load-data',
+        // attribute: 'load-data',
       },
+      page: { type: Number, reflect: true},
+
+      }
     };
   }
 
@@ -43,13 +53,19 @@ class CourseDates extends LitElement {
 
   getData() {
     // special JS capability to resolve a URL path relative to the current file
-    const file = new URL('./response.json', import.meta.url).href;
+    // //const file = new URL('./response.json', import.meta.url).href;
     // go get our data from the file
+    
     fetch(file)
-      .then(response =>
+      .then(response => {
+        if (resp.ok) {
+          return resp.json();
+        }
+        return false;
+      }
         // convert to json; I skip the .ok here because it's a local file
         // but remote requests should check for a valid response
-        response.json()
+      
       )
       .then(data => {
         this.dates = [];
