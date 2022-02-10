@@ -47,7 +47,7 @@ class NasaImageSearch extends LitElement {
   }
 
   updated(changedProperties) {
-    changedProperties.forEach((oldValue, propName) => {
+    changedProperties.forEach(propName => {
       if (propName === 'loadData' && this[propName]) {
         this.getData();
       }
@@ -73,7 +73,7 @@ class NasaImageSearch extends LitElement {
         // but remote requests should check for a valid response
       )
       .then(data => {
-        console.log(data);
+        // console.log(data);
         this.images = [];
         // many ways to loop here -- https://www.codespot.org/ways-to-loop-through-an-array-in-javascript/#:~:text=6%20Ways%20to%20Loop%20Through%20an%20Array%20in,callback%20function%20for%20each%20element%20in%20the%20array.
         // for loop runs synchronously though
@@ -88,6 +88,7 @@ class NasaImageSearch extends LitElement {
             title: data.collection.items[i].data[0].title,
             creator: data.collection.items[i].data[0].secondary_creator,
           };
+          // adds results elements into the blank images array
           this.images.push(results);
           // brute force; just pull what looks like a date off the front for 01-31-22 format
           // I googled "javascript ow to convert date string into..." and skipped around
