@@ -38,6 +38,52 @@
   <h1>IP look up</h1>
   <user-ip></user-ip>
   <user-ip ip="24.48.0.1"></user-ip>
+  <script type = "text/javascript">
+    let response = 
+    [
+        {
+            "Location": "Westgate Bldg E205",
+            "Start Time": "2022-01-23T10:10:00",
+            "End Time": "2022-01-23T11:00:00",
+            "Details" : "IST 261: App Development Studio I",
+            "Order" : 1
+        },
+        
+        {
+            "Location": "Wartik Lab 108",
+            "Start Time": "2022-01-24T12:05:00",
+            "End Time": "2022-01-24T1:20:00",
+            "Details": "IST 402 - Micro Front End Dev",
+            "Order": 2
+        },
+        
+        {
+            "Location": "Westgate Bldg E208",
+            "Start Time": "2022-01-24T01:35:00",
+            "End Time": "2022-01-24T1:02:55:00",
+            "Details": "SRA 231 - Decision Theory",
+            "Order": 3
+        },
+    
+        {
+            "Location": "Willard bldg 064",
+            "Start Time": "2022-01-24T04:35:00",
+            "End Time": "2022-01-24T05:55:00",
+            "Details": "SRA 221 - Network Security Overview",
+            "Order": 4
+        },
+    
+        {
+            "Location": "World Campus",
+            "Start Time": "2022-01-24T08:30:00",
+            "End Time": "2022-01-24T09:55:00",
+            "Details": "IST 111S - Seminar in IST",
+            "Order": 5
+        }
+    
+    ]
+    console.log(response)
+    </script>
   <script type="module">
     // this makes user-ip web component work
     import {UserIP} from "./src/UserIP.js";
